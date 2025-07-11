@@ -1,5 +1,7 @@
-package com.javaguy.superbaseauthdemo.config;
+package com.javaguy.superbaseauth.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.beans.factory.annotation.Value;
@@ -30,5 +32,12 @@ public class SupabaseConfig {
         headers.set("apikey", supabaseKey);
         headers.setContentType(MediaType.APPLICATION_JSON);
         return headers;
+    }
+
+    @Bean
+    public ObjectMapper objectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.registerModule(new JavaTimeModule());
+        return objectMapper;
     }
 }
