@@ -1,4 +1,4 @@
-package com.javaguy.superbaseauthdemo.model;
+package com.javaguy.superbaseauth.model;
 
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;

@@ -1,13 +1,13 @@
-package com.javaguy.superbaseauthdemo;
+package com.javaguy.superbaseauth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SuperbaseAuthDemoApplication {
+public class SuperbaseAuthApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SuperbaseAuthDemoApplication.class, args);
+        SpringApplication.run(SuperbaseAuthApplication.class, args);
     }
 
 }

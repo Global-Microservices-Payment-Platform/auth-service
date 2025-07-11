@@ -1,10 +1,10 @@
-package com.javaguy.superbaseauthdemo;
+package com.javaguy.superbaseauth;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SuperbaseAuthDemoApplicationTests {
+class SuperbaseAuthApplicationTests {
 
     @Test
     void contextLoads() {
