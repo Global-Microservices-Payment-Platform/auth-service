@@ -1,7 +1,7 @@
-package com.javaguy.superbaseauthdemo.controller;
+package com.javaguy.superbaseauth.controller;
 
-import com.javaguy.superbaseauthdemo.model.*;
-import com.javaguy.superbaseauthdemo.service.AuthService;
+import com.javaguy.superbaseauth.model.*;
+import com.javaguy.superbaseauth.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;

@@ -1,4 +1,4 @@
-package com.javaguy.superbaseauthdemo.model;
+package com.javaguy.superbaseauth.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
