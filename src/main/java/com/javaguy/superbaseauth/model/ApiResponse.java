@@ -1,4 +1,4 @@
-package com.javaguy.superbaseauthdemo.model;
+package com.javaguy.superbaseauth.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
