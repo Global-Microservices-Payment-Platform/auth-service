@@ -1,0 +1,39 @@
+{
+  "name": "Spring Boot Development",
+  "dockerFile": "Dockerfile.dev",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "vmware.vscode-spring-boot",
+        "redhat.vscode-xml",
+        "pivotal.vscode-spring-boot",
+        "vscjava.vscode-spring-initializr",
+        "vscjava.vscode-maven"
+      ],
+      "settings": {
+        "java.jdt.ls.java.home": "/usr/local/sdkman/candidates/java/current",
+        "java.configuration.runtimes": [
+          {
+            "name": "JavaSE-21",
+            "path": "/usr/local/sdkman/candidates/java/current"
+          }
+        ]
+      }
+    }
+  },
+  "forwardPorts": [
+    8088
+  ],
+  "postCreateCommand": "mvn install -DskipTests",
+  "remoteUser": "vscode",
+  "features": {
+    "docker-in-docker": "latest"
+  },
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/${localWorkspaceFolderBasename},type=bind,consistency=cached",
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "runArgs": [
+    "--env-file", ".devcontainer/devcontainer.env",
+    "--volume=${env:HOME}${env:USERPROFILE}/.m2:/home/vscode/.m2"
+  ]
+}
