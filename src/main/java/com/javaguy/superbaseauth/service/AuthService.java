@@ -1,10 +1,10 @@
 package com.javaguy.superbaseauth.service;
+
 import com.javaguy.superbaseauth.config.SupabaseConfig;
 import com.javaguy.superbaseauth.model.*;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
-
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,6 +14,7 @@ import org.springframework.web.client.ResourceAccessException;
 import org.springframework.web.client.RestTemplate;
 
 import static org.springframework.http.MediaType.APPLICATION_JSON;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -47,8 +48,7 @@ public class AuthService {
             ResponseEntity<AuthResponse> response = restTemplate.postForEntity(
                     url,
                     entity,
-                    AuthResponse.class
-            );
+                    AuthResponse.class);
             log.info("Signup response status: {}", response.getStatusCode());
 
             // Publish the event with full auth response
