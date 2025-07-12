@@ -24,9 +24,7 @@ public class AuthController {
         // Check for validation errors
         if (bindingResult.hasErrors()) {
             StringBuilder errorMessage = new StringBuilder();
-            bindingResult.getAllErrors().forEach(error ->
-                    errorMessage.append(error.getDefaultMessage()).append("; ")
-            );
+            bindingResult.getAllErrors().forEach(error -> errorMessage.append(error.getDefaultMessage()).append("; "));
             return ResponseEntity.badRequest()
                     .body(ApiResponse.error(errorMessage.toString()));
         }
@@ -54,9 +52,7 @@ public class AuthController {
         // Check for validation errors
         if (bindingResult.hasErrors()) {
             StringBuilder errorMessage = new StringBuilder();
-            bindingResult.getAllErrors().forEach(error ->
-                    errorMessage.append(error.getDefaultMessage()).append("; ")
-            );
+            bindingResult.getAllErrors().forEach(error -> errorMessage.append(error.getDefaultMessage()).append("; "));
             return ResponseEntity.badRequest()
                     .body(ApiResponse.error(errorMessage.toString()));
         }
@@ -72,29 +68,34 @@ public class AuthController {
         }
     }
     /*
-
-    @GetMapping("/profile")
-    public ResponseEntity<ApiResponse<User>> getUserProfile(String authHeader){
-        try{
-            String token = authHeader.replace("Bearer ", "");
-            User user = authService.getUserProfile(token);
-            return ResponseEntity.ok(ApiResponse.success("User profile retrieved successfully", user));
-        } catch (Exception e){
-            return ResponseEntity.badRequest().body(ApiResponse.error("Error retrieving user profile"));
-        }
-    }
-
-    @PostMapping("/logout")
-    public ResponseEntity<ApiResponse<String>> logout(@RequestHeader("Authorization") String authHeader) {
-        try {
-            String token = authHeader.replace("Bearer ", "");
-            authService.logout(token);
-            return ResponseEntity.ok(ApiResponse.success("Logout successful", "You have been logged out successfully"));
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body(ApiResponse.error("Error logging out: " + e.getMessage()));
-        }
-    }
-    /
+     * 
+     * @GetMapping("/profile")
+     * public ResponseEntity<ApiResponse<User>> getUserProfile(String authHeader){
+     * try{
+     * String token = authHeader.replace("Bearer ", "");
+     * User user = authService.getUserProfile(token);
+     * return
+     * ResponseEntity.ok(ApiResponse.success("User profile retrieved successfully",
+     * user));
+     * } catch (Exception e){
+     * return ResponseEntity.badRequest().body(ApiResponse.
+     * error("Error retrieving user profile"));
+     * }
+     * }
+     * 
+     * @PostMapping("/logout")
+     * public ResponseEntity<ApiResponse<String>>
+     * logout(@RequestHeader("Authorization") String authHeader) {
+     * try {
+     * String token = authHeader.replace("Bearer ", "");
+     * authService.logout(token);
+     * return ResponseEntity.ok(ApiResponse.success("Logout successful",
+     * "You have been logged out successfully"));
+     * } catch (Exception e) {
+     * return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+     * .body(ApiResponse.error("Error logging out: " + e.getMessage()));
+     * }
+     * }
+     * /
      */
 }
